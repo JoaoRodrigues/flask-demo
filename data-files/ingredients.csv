@@ -1,0 +1,11 @@
+name,type,cost
+steak,meat,10.0
+salmon,fish,10.0
+tomato,vegetable,2.00
+lettuce,vegetable,2.00
+banana,fruit,1.00
+avocado,vegetable,2.00
+apple,fruit,1.00
+water,drinks,1.00
+coke,drinks,1.50
+beer,drinks,2.00

@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Your Fantastic Home Page!</title>
+  <meta name="description" content="An amazing home page built with love!">
+  <meta name="author" content="Your Name!">
+
+  <!-- CSS defines the style/design of the elements on the page -->
+  <!-- Flask allows you to inject Python code into these HTML templates. -->
+  <!-- This example below generates the appropriate -->
+  <!-- url for the style.css file, which lives under the 'static' folder. -->
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+  <header>
+    <h1>This is your home page!</h1>
+  </header>
+
+  <form id='checkboxes' method="post" action='/summary'>
+    <!-- We will dynamically generate a list of checkboxes  -->
+    <!-- based on our ingredients.cv file we read in the app.py file. -->
+    <!-- Since we return a dictionary, we can access the keys with dot -->
+    <!-- notation: item.name. -->
+   
+    {% for item in ingredients %}
+      <input type="checkbox" id="box_{{item.name}}" name="{{item.name}}" value="{{item.cost}}">
+      <label for="box_{{item.name}}">{{item.name}}</label><br/>
+    {%endfor%}
+
+    <br/>
+    <button type="submit" >Calculate Cost</button>
+  </form>
+
+</body>
+</html>
