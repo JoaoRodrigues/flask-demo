@@ -1,0 +1,7 @@
+name: flask-demo
+channels:
+  - defaults
+dependencies:
+  - flask=1.1.2
+  - python=3.7.7
+
